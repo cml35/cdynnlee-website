@@ -18,13 +18,12 @@ jobs:
       - name: Deploy using ssh
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT}}
-          source: "."
-          target: ${{ secrets.PATH }}
-          script: cd /var/www/cdynnlee-website/
+          script: |
+            cd /var/www/cdynnlee-website/
             git pull origin main
             git status
             npm install --only=prod
