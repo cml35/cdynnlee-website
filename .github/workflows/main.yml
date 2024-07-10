@@ -39,4 +39,4 @@ jobs:
             git pull origin main
             git status
             npm install
-            npm run build
+            npm run deploy
