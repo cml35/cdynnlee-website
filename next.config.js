@@ -3,4 +3,9 @@
 module.exports = {
   // Use the CDN in production and localhost for development.
   assetPrefix: "https://cdynnlee.com",
+  basePath: "",
+  output: "standalone",
+  experimental: {
+    appDir: true,
+  },
 };
