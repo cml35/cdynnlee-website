@@ -7,7 +7,7 @@ import Layout from "../components/layout";
 import { blogPosts } from "../hooks/useListBlogPosts";
 import profilePic from "../assets/IMG_3919.png";
 
-export const Subscription = () => {
+const Subscription = () => {
   return (
     <div className="flex flex-col items-center mt-10 xl:mt-0 mb-20">
       <h3 className="text-sm font-semibold leading-6 text-gray-900">
