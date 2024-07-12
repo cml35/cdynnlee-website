@@ -7,13 +7,48 @@ import Layout from "../components/layout";
 import { blogPosts } from "../hooks/useListBlogPosts";
 import profilePic from "../assets/IMG_3919.png";
 
+export const Subscription = () => {
+  return (
+    <div className="flex flex-col items-center mt-10 xl:mt-0 mb-20">
+      <h3 className="text-sm font-semibold leading-6 text-gray-900">
+        Subscribe to my newsletter
+      </h3>
+      <p className="mt-2 text-sm leading-6 text-gray-600">
+        My latest articles, updates and resources, sent to your inbox weekly.
+      </p>
+      <form className="mt-6 sm:flex sm:max-w-md">
+        <label htmlFor="email-address" className="sr-only">
+          Email address
+        </label>
+        <input
+          id="email-address"
+          name="email-address"
+          type="email"
+          required
+          placeholder="Enter your email"
+          autoComplete="email"
+          className="w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-custom-200 sm:w-64 sm:text-sm sm:leading-6 xl:w-full"
+        />
+        <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
+          <button
+            type="submit"
+            className="flex w-full items-center justify-center rounded-md bg-custom-200 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-custom-200/2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-custom-200"
+          >
+            Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
 const BlogList = () => {
   return (
     <div className="py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            From the blog
+            From my blog
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">
             Fresh content to keep you updated on the latest trends in tech.
@@ -29,12 +64,6 @@ const BlogList = () => {
                 <time dateTime={post.datetime} className="text-gray-500">
                   {post.date}
                 </time>
-                <a
-                  href={post.category.href}
-                  className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                >
-                  {post.category.title}
-                </a>
               </div>
               <div className="group relative">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
@@ -53,7 +82,7 @@ const BlogList = () => {
                   src={profilePic}
                   width={40}
                   height={40}
-                  alt="Picture of the author"
+                  alt="My picture"
                 />
                 <div className="text-sm leading-6">
                   <p className="font-semibold text-gray-900">
@@ -78,6 +107,7 @@ const Posts = () => {
     <main className="flex flex-col items-center justify-between pt-8">
       <Layout>
         <BlogList />
+        <Subscription />
       </Layout>
     </main>
   );
