@@ -18,6 +18,7 @@ const config: Config = {
         custom: {
           100: "#FEEEF8",
           200: "#0EA5E9",
+          300: "#EFFFAE",
         },
       },
     },

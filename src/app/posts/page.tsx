@@ -5,12 +5,11 @@ import Image from "next/image";
 import Layout from "../components/layout";
 
 import { blogPosts } from "../hooks/useListBlogPosts";
-import profilePic from "../assets/IMG_3919.png";
 
 const Subscription = () => {
   return (
-    <div className="flex flex-col items-center mt-10 xl:mt-0 mb-20">
-      <h3 className="text-sm font-semibold leading-6 text-gray-900">
+    <div className="flex flex-col items-center mx-auto mt-8 mb-20">
+      <h3 className="mt-2 text-sm font-semibold leading-6 text-gray-900">
         Subscribe to my newsletter
       </h3>
       <p className="mt-2 text-sm leading-6 text-gray-600">
@@ -27,7 +26,7 @@ const Subscription = () => {
           required
           placeholder="Enter your email"
           autoComplete="email"
-          className="w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-custom-200 sm:w-64 sm:text-sm sm:leading-6 xl:w-full"
+          className="w-full min-w-0 appearance-none rounded-md bg-white px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-custom-200 sm:w-64 sm:text-sm sm:leading-6 xl:w-full"
         />
         <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
           <button
@@ -44,17 +43,18 @@ const Subscription = () => {
 
 const BlogList = () => {
   return (
-    <div className="py-24">
+    <div className="px-6 py-22 sm:py-24 lg:px-8">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
+        <div className="mx-auto text-center lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             From my blog
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">
-            Fresh content to keep you updated on the latest trends in tech.
+            Fresh content to keep you updated on what I&apos;m up to, trends in
+            tech and upcoming projects.
           </p>
         </div>
-        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-28 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {blogPosts.map((post) => (
             <article
               key={post.id}
@@ -79,7 +79,7 @@ const BlogList = () => {
               <div className="relative mt-8 flex items-center gap-x-4">
                 <Image
                   className="rounded"
-                  src={profilePic}
+                  src="/IMG_3919.png"
                   width={40}
                   height={40}
                   alt="My picture"
